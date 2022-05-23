@@ -6,6 +6,7 @@ public class Processos {
         int tempo_espera;
         int tempo_execucao;
         int tempo_restante;
+        int tempo_chegada;
 
         public Processos(){
             
@@ -16,6 +17,7 @@ public class Processos {
         this.tempo_espera = tempo_espera;
         this.tempo_execucao = tempo_execucao;
         this.tempo_restante = tempo_restante;
+        this.tempo_chegada = tempo_chegada;
         }
 
 
