@@ -62,10 +62,10 @@ public class Escalonamento {
             System.out.println("Valor invalido");
         }
         
-        Processador cpu = new Processador();
+        Processador cpu =  new Processador();
         cpu.fila = fila;
-        cpu.imprimirInfos(fila);
-        cpu.processar(0);
+        cpu.processar();
+
     
 
     }
