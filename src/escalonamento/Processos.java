@@ -7,6 +7,7 @@ public class Processos {
         int tempo_execucao;
         int tempo_restante;
         int tempo_chegada;
+        int prioridade;
 
         public Processos(){
             
