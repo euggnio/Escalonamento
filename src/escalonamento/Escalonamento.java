@@ -8,14 +8,19 @@ public class Escalonamento {
     public static void main(String[] args) {
         //Scanner, tamanho, fila , random
         Scanner sc = new Scanner(System.in);
-        int n , opc, tipo;
+        int n , opc, tipo, contagem = 0;
         ArrayList<Processos> fila = new ArrayList<>();
         Random gerador = new Random();
 
         //tamanho da quantidade de processos
         System.out.println("Digite a quantidade de processos: ");
         n = sc.nextInt();
-        System.out.println("Digite\n1 para SJF Premptivo - \n2 para SJF NÃO premptivo - \n3 para FIFO - \n4 para Prioritario");
+        System.out.println("Digite"
+                + "\n1 para SJF Premptivo - "
+                + "\n2 para SJF NÃO premptivo - "
+                + "\n3 para FIFO - "
+                + "\n4 para Prioritario - "
+                + "\n5 para Round-Robin");
         tipo = sc.nextInt();
         //gera os processos na fila.
         if(n > 0 && n < 25){
@@ -40,6 +45,7 @@ public class Escalonamento {
                 fila.get(i).tempo_chegada = i + (i + gerador.nextInt(2));
                 }
                 fila.get(i).prioridade = gerador.nextInt(6);
+                contagem = gerador.nextInt(4) + 1;
             }
         }
         if(opc == 2){
@@ -68,6 +74,7 @@ public class Escalonamento {
                         break;
                     }
                 }
+
                 System.out.println("===========================================");
             }
         }
@@ -76,6 +83,7 @@ public class Escalonamento {
         if (opc == 1 || opc == 2 || opc == 3 || opc == 4 ) {
                 Processador cpu = new Processador();
                 cpu.fila = fila;
+                cpu.contagem = contagem;
                 cpu.processar(tipo);
         }else{
             System.err.println("OPC INVALIDA!");
